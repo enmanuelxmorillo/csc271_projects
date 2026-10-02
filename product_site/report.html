@@ -1,0 +1,101 @@
+<!--
+Name: Enmanuel Morillo
+Date: October 1, 2026
+All Images are AI-generated.
+-->
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BugFlow - Report a Bug</title>
+  </head>
+
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th,
+    td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+
+  <body>
+    <!-- Main heading -->
+    <h1>BugFlow</h1>
+    <!---AI Generated Logo-->
+    <img src="Images/BugFlow.png" alt="BugFlow Logo" width="100" height="100" />
+
+    <!-- Navigation/Links -->
+    <p>
+      <a href="index.html">Home</a> | <a href="report.html">Report a Bug</a> |
+      <a href="examples.html">Examples</a> |
+      <a href="features.html">Features</a> | <a href="about.html">About</a> |
+      <a href="faq.html">FAQ</a>
+    </p>
+    <hr />
+
+    <!-- What We Need From You table content -->
+    <h3>What We Need From You ?</h3>
+    <table>
+      <tr>
+        <th>Information Needed</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Where did you find it ?</td>
+        <td>What website or app or software are you on ?
+        </td>
+      </tr>
+      <tr>
+
+      <tr>
+        <td>Bug Title</td>
+        <td>A brief summary of the bug.</td>
+      </tr>
+      <tr>
+        <td>Bug Description</td>
+        <td>A detailed description of the bug.</td>
+      </tr>
+      <tr>
+        <td>Steps to Reproduce</td>
+        <td>The steps needed to reproduce the bug.</td>
+      </tr>
+      <tr>
+        <td>Screenshot</td>
+        <td>A screenshot of the bug, if available.</td>
+      </tr>
+    </table>
+
+    <!-- End of What We Need From You table content -->
+
+    <!--Form Code Start-->
+     <br />
+    <h3>Submit a Bug Report</h3>
+    <form action="submit_bug.php" method="post">
+      <label for="where_found">Where did you find it ?</label>
+      <input type="text" id="where_found" name="where_found" required /><br /><br />
+      <label for="bug_title">Bug Title:</label>
+      <input type="text" id="bug_title" name="bug_title" required /><br /><br />
+      <label for="bug_description">Bug Description:</label><br />
+      <textarea id="bug_description" name="bug_description" rows="4" cols="50" required></textarea><br /><br />
+      <label for="steps_to_reproduce">Steps to Reproduce:</label><br />
+      <textarea id="steps_to_reproduce" name="steps_to_reproduce" rows=4" cols="50" required></textarea><br /><br />
+      <br />
+      <img src="Images/ScreeshotBug.png" alt="BugFlow Logo" width="100" height="100" />
+      <label for="screenshot">Screenshot:</label>
+      <input type="file" id="screenshot" name="screenshot" accept="image/*" /><br /><br />
+      <input type="submit" value="Submit Bug Report" />
+    </form>
+    <!--Form Code End-->
+
+  </body>
+</html>
