@@ -1,0 +1,458 @@
+/*
+  Name: Enmanuel Morillo
+  Date: October 20, 2026
+  File: css/styles.css
+  Description: External stylesheet for my BugFlow product site. Every page
+  (index.html, report.html, examples.html) links to this file so the site
+  has the same colors, fonts and spacing. The colors come from the palette
+  in my Process & Design document:
+    navy #0F172A, blue #2563EB, white #FFFFFF, light gray #F8FAFC,
+    red #DC2626 (errors/warnings), green #16A34A (success).
+
+  AI-assisted suggestion: Claude (Anthropic) generated the first version of
+  this stylesheet (layout, cards, buttons, table and form styles, and the
+  mobile media query). I then had Claude help me simplify it to the CSS we
+  have covered in class. I reviewed and tested each section in my browser.
+  Detailed AI documentation: [PASTE LINK TO YOUR AI DOCUMENTATION HERE]
+*/
+
+
+/* ---------- Base page styles ---------- */
+
+/* Background color and font for every page */
+body {
+  margin: 0;
+  background-color: #F8FAFC;
+  color: #334155;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/* Main headline of each page */
+h1 {
+  margin-top: 0;
+  color: #0F172A;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+/* Section headings */
+h2 {
+  margin-top: 0;
+  color: #0F172A;
+  font-size: 26px;
+}
+
+h3 {
+  color: #0F172A;
+  font-size: 18px;
+}
+
+/* Same font and color for all paragraphs */
+p {
+  color: #334155;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+strong {
+  color: #0F172A;
+}
+
+/* Keeps images from getting wider than the screen */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Divider lines between sections */
+hr {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid #E2E8F0;
+}
+
+
+/* ---------- Links ---------- */
+
+/* Unvisited links are blue */
+a:link {
+  color: #2563EB;
+  text-decoration: none;
+}
+
+/* Visited links are purple */
+a:visited {
+  color: #7C3AED;
+}
+
+/* Hovered links get darker and underlined */
+a:hover {
+  color: #1D4ED8;
+  text-decoration: underline;
+}
+
+/* Outline so keyboard users can see where they are */
+a:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid #2563EB;
+}
+
+
+/* ---------- Header and navigation ---------- */
+.site-header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+/* Logo on the left, links on the right (2-column grid) */
+.header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Keep the BugFlow name navy instead of link colors */
+.brand:link,
+.brand:visited,
+.brand:hover {
+  color: #0F172A;
+  text-decoration: none;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+nav a {
+  margin-left: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+nav a:link,
+nav a:visited {
+  color: #334155;
+}
+
+nav a:hover {
+  background-color: #EFF6FF;
+  color: #2563EB;
+  text-decoration: none;
+}
+
+/* Shows which page you are on */
+nav a.current,
+nav a.current:visited {
+  background-color: #0F172A;
+  color: #FFFFFF;
+}
+
+
+/* ---------- Page layout ---------- */
+
+/* Keeps the main content centered */
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+/* White box used for cards, forms and examples */
+.card {
+  padding: 28px;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+/* Small blue text above a page title */
+.eyebrow {
+  margin-bottom: 8px;
+  color: #2563EB;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Bigger intro paragraph */
+.lead {
+  color: #64748B;
+  font-size: 18px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Gray helper text */
+.hint {
+  color: #64748B;
+  font-size: 15px;
+}
+
+/* Text on the left, picture on the right */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  align-items: center;
+  gap: 40px;
+}
+
+.split img {
+  width: 420px;
+}
+
+
+/* ---------- Buttons ---------- */
+.btn,
+input[type="submit"] {
+  display: inline-block;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563EB;
+  color: #FFFFFF;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:link,
+.btn:visited {
+  color: #FFFFFF;
+}
+
+.btn:hover,
+input[type="submit"]:hover {
+  background-color: #1D4ED8;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+
+/* ---------- Home page ---------- */
+
+/* Light blue box at the top of the home page */
+#hero {
+  padding: 40px;
+  background-color: #EFF6FF;
+  border-radius: 16px;
+}
+
+.tagline {
+  color: #0F172A;
+}
+
+/* "How It All Works" picture */
+.process-img {
+  display: block;
+  margin: 0 auto 30px;
+}
+
+/* Three step cards side by side */
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+
+.steps li {
+  color: #64748B;
+}
+
+/* Step title goes on its own line under the number */
+.steps li strong {
+  display: block;
+  margin: 8px 0 6px;
+  font-size: 18px;
+}
+
+/* Benefits list in two columns */
+.check-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 30px;
+  margin: 0;
+}
+
+.check-list li {
+  margin-bottom: 10px;
+  color: #0F172A;
+}
+
+/* Navy box at the bottom of the page */
+.cta {
+  padding: 40px 30px;
+  background-color: #0F172A;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.cta h2 {
+  color: #FFFFFF;
+}
+
+.cta p {
+  color: #CBD5E1;
+}
+
+/* Lighter link color so it shows up on the navy background */
+.cta a:link,
+.cta a:visited {
+  color: #93C5FD;
+}
+
+.cta a.btn:link,
+.cta a.btn:visited {
+  color: #FFFFFF;
+}
+
+
+/* ---------- Tables ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+}
+
+th {
+  padding: 12px 16px;
+  background-color: #0F172A;
+  color: #FFFFFF;
+  text-align: left;
+}
+
+td {
+  padding: 12px 16px;
+  border-top: 1px solid #E2E8F0;
+  color: #0F172A;
+}
+
+/* Every other row is light gray so rows are easier to read */
+tr:nth-child(even) {
+  background-color: #F8FAFC;
+}
+
+
+/* ---------- Report a Bug form ---------- */
+#bug-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #0F172A;
+  font-weight: bold;
+}
+
+#bug-form input[type="text"],
+#bug-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+/* Dashed box around the screenshot upload (picture + text) */
+.upload-box {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 2px dashed #93C5FD;
+  border-radius: 10px;
+  background-color: #EFF6FF;
+}
+
+.upload-box p {
+  margin-top: 0;
+  color: #64748B;
+  font-size: 14px;
+}
+
+
+/* ---------- Examples page ---------- */
+.intro {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.example {
+  margin-bottom: 30px;
+}
+
+/* "Before" and "After" tags */
+.label {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.label-before {
+  /* Red = the weak report */
+  background-color: #FEE2E2;
+  color: #DC2626;
+}
+
+.label-after {
+  /* Green = the organized BugFlow report */
+  background-color: #DCFCE7;
+  color: #16A34A;
+}
+
+/* The vague "before" report, shown like a quote */
+.before-quote {
+  padding: 14px 18px;
+  border-left: 4px solid #DC2626;
+  background-color: #FEF2F2;
+  color: #0F172A;
+  font-style: italic;
+}
+
+/* ---------- Bottom of page ---------- */
+#site-footer {
+  padding: 30px 20px;
+  background-color: #0F172A;
+  text-align: center;
+}
+#site-footer p {
+  margin: 6px 0;
+  color: #94A3B8;
+  font-size: 14px;
+}
+#site-footer a:link {
+  color: #FFFFFF;
+}
+#site-footer a:visited {
+  color: #C4B5FD;
+}
+#site-footer a:hover {
+  color: #93C5FD;
+}

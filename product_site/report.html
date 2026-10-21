@@ -1,101 +1,129 @@
-<!--
-Name: Enmanuel Morillo
-Date: October 1, 2026
-All Images are AI-generated.
--->
-
-
 <!doctype html>
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BugFlow - Report a Bug</title>
-  </head>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 
-  <style>
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-    th,
-    td {
-      border: 1px solid black;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
+<body>
 
-  <body>
-    <!-- Main heading -->
-    <h1>BugFlow</h1>
-    <!---AI Generated Logo-->
-    <img src="Images/BugFlow.png" alt="BugFlow Logo" width="100" height="100" />
+    <!-- Header: logo and navigation -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html">
+                <img class="logo" src="images/BugFlow.png" alt="BugFlow Logo" width="50" height="50">
+                BugFlow
+            </a>
 
-    <!-- Navigation/Links -->
-    <p>
-      <a href="index.html">Home</a> | <a href="report.html">Report a Bug</a> |
-      <a href="examples.html">Examples</a> |
-      <a href="features.html">Features</a> | <a href="about.html">About</a> |
-      <a href="faq.html">FAQ</a>
-    </p>
-    <hr />
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="report.html" class="current">Report a Bug</a>
+                <a href="examples.html">Examples</a>
+            </nav>
+        </div>
+    </header>
 
-    <!-- What We Need From You table content -->
-    <h3>What We Need From You ?</h3>
-    <table>
-      <tr>
-        <th>Information Needed</th>
-        <th>Description</th>
-      </tr>
-      <tr>
-        <td>Where did you find it ?</td>
-        <td>What website or app or software are you on ?
-        </td>
-      </tr>
-      <tr>
+    <main class="content">
 
-      <tr>
-        <td>Bug Title</td>
-        <td>A brief summary of the bug.</td>
-      </tr>
-      <tr>
-        <td>Bug Description</td>
-        <td>A detailed description of the bug.</td>
-      </tr>
-      <tr>
-        <td>Steps to Reproduce</td>
-        <td>The steps needed to reproduce the bug.</td>
-      </tr>
-      <tr>
-        <td>Screenshot</td>
-        <td>A screenshot of the bug, if available.</td>
-      </tr>
-    </table>
+        <!-- Intro -->
+        <section class="split">
+            <div>
+                <h1>Tell Us What Went Wrong</h1>
+                <p>
+                    Answer a few simple questions in your own words. BugFlow will
+                    organize your answers so a developer can understand the problem.
+                </p>
+                <p>
+                    No technical knowledge required. Need ideas? See the
+                    <a href="examples.html">example reports</a>.
+                </p>
+            </div>
 
-    <!-- End of What We Need From You table content -->
+            <img src="images/BugReporter.png" alt="BugFlow mascot holding a pencil and a bug report checklist" width="420" height="482">
+        </section>
 
-    <!--Form Code Start-->
-     <br />
-    <h3>Submit a Bug Report</h3>
-    <form action="submit_bug.php" method="post">
-      <label for="where_found">Where did you find it ?</label>
-      <input type="text" id="where_found" name="where_found" required /><br /><br />
-      <label for="bug_title">Bug Title:</label>
-      <input type="text" id="bug_title" name="bug_title" required /><br /><br />
-      <label for="bug_description">Bug Description:</label><br />
-      <textarea id="bug_description" name="bug_description" rows="4" cols="50" required></textarea><br /><br />
-      <label for="steps_to_reproduce">Steps to Reproduce:</label><br />
-      <textarea id="steps_to_reproduce" name="steps_to_reproduce" rows=4" cols="50" required></textarea><br /><br />
-      <br />
-      <img src="Images/ScreeshotBug.png" alt="BugFlow Logo" width="100" height="100" />
-      <label for="screenshot">Screenshot:</label>
-      <input type="file" id="screenshot" name="screenshot" accept="image/*" /><br /><br />
-      <input type="submit" value="Submit Bug Report" />
-    </form>
-    <!--Form Code End-->
+        <hr>
 
-  </body>
+        <!-- What we need table -->
+        <section>
+            <h2>What We Need From You?</h2>
+            <table>
+                <tr>
+                    <th>Information Needed</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Where did you find it?</td>
+                    <td>What website, app, or software are you on?</td>
+                </tr>
+                <tr>
+                    <td>Bug Title</td>
+                    <td>A brief summary of the bug.</td>
+                </tr>
+                <tr>
+                    <td>Bug Description</td>
+                    <td>A detailed description of the bug.</td>
+                </tr>
+                <tr>
+                    <td>Steps to Reproduce</td>
+                    <td>The steps needed to reproduce the bug.</td>
+                </tr>
+                <tr>
+                    <td>Screenshot</td>
+                    <td>A screenshot of the bug, if available.</td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- Bug report form -->
+        <section class="card">
+            <h2>Submit a Bug Report</h2>
+
+            <form id="bug-form" action="submit_bug.php" method="post" enctype="multipart/form-data">
+
+                <label for="where_found">Where did you find it?</label>
+                <input type="text" id="where_found" name="where_found" placeholder="Example: My school's assignment portal" required>
+
+                <label for="bug_title">Bug Title:</label>
+                <input type="text" id="bug_title" name="bug_title" placeholder="Example: Page freezes when uploading a file" required>
+
+                <label for="bug_description">Bug Description:</label>
+                <textarea id="bug_description" name="bug_description" rows="4" cols="50" placeholder="What were you trying to do, and what actually happened?" required></textarea>
+
+                <label for="steps_to_reproduce">Steps to Reproduce:</label>
+                <textarea id="steps_to_reproduce" name="steps_to_reproduce" rows="4" cols="50" placeholder="What did you do before the problem happened?" required></textarea>
+
+                <!-- Screenshot upload -->
+                <label for="screenshot">Screenshot:</label>
+                <div class="upload-box">
+                    <img src="images/ScreeshotBug.png" alt="BugFlow mascot holding up a screenshot" width="90" height="96">
+                    <div>
+                        <p>Optional: add a picture of the problem so developers can see what you saw.</p>
+                        <input type="file" id="screenshot" name="screenshot" accept="image/*">
+                    </div>
+                </div>
+
+                <input type="submit" value="Submit Bug Report">
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="site-footer">
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="report.html">Report a Bug</a> |
+            <a href="examples.html">Examples</a>
+        </p>
+        <p>&copy; 2026 BugFlow - Enmanuel Morillo, CSC271</p>
+    </footer>
+
+</body>
 </html>
