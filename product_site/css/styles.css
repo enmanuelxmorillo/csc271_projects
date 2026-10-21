@@ -2,18 +2,6 @@
   Name: Enmanuel Morillo
   Date: October 20, 2026
   File: css/styles.css
-  Description: External stylesheet for my BugFlow product site. Every page
-  (index.html, report.html, examples.html) links to this file so the site
-  has the same colors, fonts and spacing. The colors come from the palette
-  in my Process & Design document:
-    navy #0F172A, blue #2563EB, white #FFFFFF, light gray #F8FAFC,
-    red #DC2626 (errors/warnings), green #16A34A (success).
-
-  AI-assisted suggestion: Claude (Anthropic) generated the first version of
-  this stylesheet (layout, cards, buttons, table and form styles, and the
-  mobile media query). I then had Claude help me simplify it to the CSS we
-  have covered in class. I reviewed and tested each section in my browser.
-  Detailed AI documentation: [PASTE LINK TO YOUR AI DOCUMENTATION HERE]
 */
 
 
