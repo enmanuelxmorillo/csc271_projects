@@ -4,284 +4,279 @@
 Name: Enmanuel Morillo
 Date: October 20, 2026
 Description: Examples page for BugFlow 
-It compares a vague "before" bug report with an organized "after" report
-for three examples, has a video about writing good bug reports, and
-links to the Report a Bug page.
+this page will show examples of how BugFlow can help users create organized bug reports from simple descriptions of software problems.
 -->
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BugFlow - Bug Examples</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- Header: logo and navigation -->
     <header class="site-header">
-        <div class="header-inner">
-            <a class="brand" href="index.html">
-                <img class="logo" src="images/BugFlow.png" alt="BugFlow Logo" width="50" height="50">
-                BugFlow
-            </a>
+      <div class="header-inner">
+        <a class="brand" href="index.html">
+          <img
+            class="logo"
+            src="images/BugFlow.png"
+            alt="BugFlow Logo"
+            width="50"
+            height="50"
+          />
+          BugFlow
+        </a>
 
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="report.html">Report a Bug</a>
-                <a href="examples.html" class="current">Examples</a>
-            </nav>
-        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="report.html">Report a Bug</a>
+          <a href="examples.html" class="current">Examples</a>
+        </nav>
+      </div>
     </header>
 
     <main class="content">
+      <!-- Intro -->
+      <section class="intro center">
+        <h1>What Does a Good Bug Report Look Like?</h1>
+        <p>
+          Reporting software problems can be confusing, especially if you don't
+          know what information developers need.
+        </p>
+        <p>
+          BugFlow helps users turn simple descriptions of software problems into
+          organized bug reports. Below are some real-world examples showing how
+          BugFlow can help.
+        </p>
+      </section>
 
-        <!-- Intro -->
-        <section class="intro center">
-            <h1>What Does a Good Bug Report Look Like?</h1>
-            <p>
-                Reporting software problems can be confusing,
-                especially if you don't know what information
-                developers need.
-            </p>
-            <p>
-                BugFlow helps users turn simple descriptions
-                of software problems into organized bug reports.
-                Below are some real-world examples showing
-                how BugFlow can help.
-            </p>
-        </section>
+      <!-- Video -->
+      <section class="video-section">
+        <h2 class="center">How to Write a Good Bug Report</h2>
+        <div class="video">
+          <iframe
+            src="https://www.youtube.com/embed/Qqfbr2itLGM"
+            title="How To Write A Good Bug Report? - Software Testing by Daniel Knott"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
 
-        <!-- Video -->
-        <section class="video-section">
-            <h2 class="center">How to Write a Good Bug Report</h2>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/Qqfbr2itLGM"
-                        title="How To Write A Good Bug Report? - Software Testing by Daniel Knott"
-                        allowfullscreen></iframe>
-            </div>
-        </section>
+      <hr />
 
-        <hr>
+      <!-- Example 1 -->
+      <article class="card example">
+        <h2>Example 1: Assignment Upload Failure</h2>
 
-        <!-- Example 1 -->
-        <article class="card example">
-            <h2>Example 1: Assignment Upload Failure</h2>
+        <h3>Before BugFlow</h3>
+        <p class="before-quote">
+          "I tried submitting my homework, but the website isn't working. Please
+          fix it."
+        </p>
 
-            <h3>Before BugFlow</h3>
-            <p class="before-quote">
-                "I tried submitting my homework, but the website
-                isn't working. Please fix it."
-            </p>
+        <h3>After BugFlow</h3>
+        <table>
+          <tr>
+            <th>Report Detail</th>
+            <th>Information</th>
+          </tr>
+          <tr>
+            <td>Application/Website</td>
+            <td>School Assignment Portal</td>
+          </tr>
+          <tr>
+            <td>Device</td>
+            <td>MacBook Air</td>
+          </tr>
+          <tr>
+            <td>Operating System</td>
+            <td>macOS</td>
+          </tr>
+          <tr>
+            <td>Problem</td>
+            <td>Website freezes when uploading a file.</td>
+          </tr>
+          <tr>
+            <td>Expected Result</td>
+            <td>Assignment uploads successfully.</td>
+          </tr>
+          <tr>
+            <td>Actual Result</td>
+            <td>Page freezes after selecting a file.</td>
+          </tr>
+          <tr>
+            <td>Error Message</td>
+            <td>No error message displayed.</td>
+          </tr>
+        </table>
 
-            <h3>After BugFlow</h3>
-            <table>
-                <tr>
-                    <th>Report Detail</th>
-                    <th>Information</th>
-                </tr>
-                <tr>
-                    <td>Application/Website</td>
-                    <td>School Assignment Portal</td>
-                </tr>
-                <tr>
-                    <td>Device</td>
-                    <td>MacBook Air</td>
-                </tr>
-                <tr>
-                    <td>Operating System</td>
-                    <td>macOS</td>
-                </tr>
-                <tr>
-                    <td>Problem</td>
-                    <td>Website freezes when uploading a file.</td>
-                </tr>
-                <tr>
-                    <td>Expected Result</td>
-                    <td>Assignment uploads successfully.</td>
-                </tr>
-                <tr>
-                    <td>Actual Result</td>
-                    <td>Page freezes after selecting a file.</td>
-                </tr>
-                <tr>
-                    <td>Error Message</td>
-                    <td>No error message displayed.</td>
-                </tr>
-            </table>
+        <h3>Steps to Reproduce</h3>
+        <ol>
+          <li>Open the school's assignment portal.</li>
+          <li>Navigate to the assignment submission page.</li>
+          <li>Click the upload button.</li>
+          <li>Select a file from the computer.</li>
+          <li>Observe that the website freezes.</li>
+        </ol>
+      </article>
 
-            <h3>Steps to Reproduce</h3>
-            <ol>
-                <li>Open the school's assignment portal.</li>
-                <li>Navigate to the assignment submission page.</li>
-                <li>Click the upload button.</li>
-                <li>Select a file from the computer.</li>
-                <li>Observe that the website freezes.</li>
-            </ol>
-        </article>
+      <!-- Example 2 -->
+      <article class="card example">
+        <h2>Example 2: Mobile App Login Error</h2>
 
-        <!-- Example 2 -->
-        <article class="card example">
-            <h2>Example 2: Mobile App Login Error</h2>
+        <h3>Before BugFlow</h3>
+        <p class="before-quote">
+          "My app won't let me log in even though my password is correct."
+        </p>
 
-            <h3>Before BugFlow</h3>
-            <p class="before-quote">
-                "My app won't let me log in even though
-                my password is correct."
-            </p>
+        <h3>After BugFlow</h3>
+        <table>
+          <tr>
+            <th>Report Detail</th>
+            <th>Information</th>
+          </tr>
+          <tr>
+            <td>Application</td>
+            <td>Mobile Banking App</td>
+          </tr>
+          <tr>
+            <td>Device</td>
+            <td>iPhone</td>
+          </tr>
+          <tr>
+            <td>Operating System</td>
+            <td>iOS</td>
+          </tr>
+          <tr>
+            <td>Problem</td>
+            <td>Login fails after entering credentials.</td>
+          </tr>
+          <tr>
+            <td>Expected Result</td>
+            <td>User is redirected to their account.</td>
+          </tr>
+          <tr>
+            <td>Actual Result</td>
+            <td>User remains on the login screen.</td>
+          </tr>
+          <tr>
+            <td>Error Message</td>
+            <td>"Unable to process login request."</td>
+          </tr>
+        </table>
 
-            <h3>After BugFlow</h3>
-            <table>
-                <tr>
-                    <th>Report Detail</th>
-                    <th>Information</th>
-                </tr>
-                <tr>
-                    <td>Application</td>
-                    <td>Mobile Banking App</td>
-                </tr>
-                <tr>
-                    <td>Device</td>
-                    <td>iPhone</td>
-                </tr>
-                <tr>
-                    <td>Operating System</td>
-                    <td>iOS</td>
-                </tr>
-                <tr>
-                    <td>Problem</td>
-                    <td>Login fails after entering credentials.</td>
-                </tr>
-                <tr>
-                    <td>Expected Result</td>
-                    <td>User is redirected to their account.</td>
-                </tr>
-                <tr>
-                    <td>Actual Result</td>
-                    <td>User remains on the login screen.</td>
-                </tr>
-                <tr>
-                    <td>Error Message</td>
-                    <td>"Unable to process login request."</td>
-                </tr>
-            </table>
+        <h3>Steps to Reproduce</h3>
+        <ol>
+          <li>Open the mobile banking application.</li>
+          <li>Enter the account email address.</li>
+          <li>Enter the password.</li>
+          <li>Press the login button.</li>
+          <li>Observe the error message.</li>
+        </ol>
+      </article>
 
-            <h3>Steps to Reproduce</h3>
-            <ol>
-                <li>Open the mobile banking application.</li>
-                <li>Enter the account email address.</li>
-                <li>Enter the password.</li>
-                <li>Press the login button.</li>
-                <li>Observe the error message.</li>
-            </ol>
-        </article>
+      <!-- Example 3 -->
+      <article class="card example">
+        <h2>Example 3: Checkout Button Not Working</h2>
 
-        <!-- Example 3 -->
-        <article class="card example">
-            <h2>Example 3: Checkout Button Not Working</h2>
+        <h3>Before BugFlow</h3>
+        <p class="before-quote">
+          "I can't buy anything because the checkout button doesn't work."
+        </p>
 
-            <h3>Before BugFlow</h3>
-            <p class="before-quote">
-                "I can't buy anything because the checkout
-                button doesn't work."
-            </p>
+        <h3>After BugFlow</h3>
+        <table>
+          <tr>
+            <th>Report Detail</th>
+            <th>Information</th>
+          </tr>
+          <tr>
+            <td>Application</td>
+            <td>Online Shopping Website</td>
+          </tr>
+          <tr>
+            <td>Device</td>
+            <td>Windows Laptop</td>
+          </tr>
+          <tr>
+            <td>Operating System</td>
+            <td>Windows 11</td>
+          </tr>
+          <tr>
+            <td>Problem</td>
+            <td>Checkout button does not respond.</td>
+          </tr>
+          <tr>
+            <td>Expected Result</td>
+            <td>Checkout page opens.</td>
+          </tr>
+          <tr>
+            <td>Actual Result</td>
+            <td>Nothing happens after clicking checkout.</td>
+          </tr>
+          <tr>
+            <td>Error Message</td>
+            <td>No error message displayed.</td>
+          </tr>
+        </table>
 
-            <h3>After BugFlow</h3>
-            <table>
-                <tr>
-                    <th>Report Detail</th>
-                    <th>Information</th>
-                </tr>
-                <tr>
-                    <td>Application</td>
-                    <td>Online Shopping Website</td>
-                </tr>
-                <tr>
-                    <td>Device</td>
-                    <td>Windows Laptop</td>
-                </tr>
-                <tr>
-                    <td>Operating System</td>
-                    <td>Windows 11</td>
-                </tr>
-                <tr>
-                    <td>Problem</td>
-                    <td>Checkout button does not respond.</td>
-                </tr>
-                <tr>
-                    <td>Expected Result</td>
-                    <td>Checkout page opens.</td>
-                </tr>
-                <tr>
-                    <td>Actual Result</td>
-                    <td>Nothing happens after clicking checkout.</td>
-                </tr>
-                <tr>
-                    <td>Error Message</td>
-                    <td>No error message displayed.</td>
-                </tr>
-            </table>
+        <h3>Steps to Reproduce</h3>
+        <ol>
+          <li>Open the online shopping website.</li>
+          <li>Add a product to the shopping cart.</li>
+          <li>Open the shopping cart.</li>
+          <li>Click the checkout button.</li>
+          <li>Observe that the page does not change.</li>
+        </ol>
+      </article>
 
-            <h3>Steps to Reproduce</h3>
-            <ol>
-                <li>Open the online shopping website.</li>
-                <li>Add a product to the shopping cart.</li>
-                <li>Open the shopping cart.</li>
-                <li>Click the checkout button.</li>
-                <li>Observe that the page does not change.</li>
-            </ol>
-        </article>
+      <hr />
 
-        <hr>
+      <!-- Why bug reports matter -->
+      <section>
+        <h2 class="center">Why Are Detailed Bug Reports Important?</h2>
+        <p class="center">
+          A detailed bug report helps developers understand what went wrong and
+          how to reproduce the issue. This makes troubleshooting easier and can
+          reduce the time needed to identify software problems.
+        </p>
 
-        <!-- Why bug reports matter -->
-        <section>
-            <h2 class="center">Why Are Detailed Bug Reports Important?</h2>
-            <p class="center">
-                A detailed bug report helps developers understand
-                what went wrong and how to reproduce the issue.
-                This makes troubleshooting easier and can reduce
-                the time needed to identify software problems.
-            </p>
+        <div class="card">
+          <ul class="check-list">
+            <li>Clearly explains the problem.</li>
+            <li>Provides steps to reproduce the issue.</li>
+            <li>Identifies the device and operating system.</li>
+            <li>Compares expected and actual results.</li>
+            <li>Helps developers investigate problems faster.</li>
+          </ul>
+        </div>
+      </section>
 
-            <div class="card">
-                <ul class="check-list">
-                    <li>Clearly explains the problem.</li>
-                    <li>Provides steps to reproduce the issue.</li>
-                    <li>Identifies the device and operating system.</li>
-                    <li>Compares expected and actual results.</li>
-                    <li>Helps developers investigate problems faster.</li>
-                </ul>
-            </div>
-        </section>
+      <hr />
 
-        <hr>
-
-        <!-- Link to the report page -->
-        <section class="cta">
-            <h2>Ready to Create Your Own Bug Report?</h2>
-            <p>
-                You don't need technical experience to report
-                software problems. BugFlow guides you through
-                the process step by step.
-            </p>
-            <p>
-                <a class="btn" href="report.html">Report a Bug Now</a>
-            </p>
-        </section>
-
+      <!-- Link to the report page -->
+      <section class="cta">
+        <h2>Ready to Create Your Own Bug Report?</h2>
+        <p>
+          You don't need technical experience to report software problems.
+          BugFlow guides you through the process step by step.
+        </p>
+        <p>
+          <a class="btn" href="report.html">Report a Bug Now</a>
+        </p>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer id="site-footer">
-        <p>
-            <a href="index.html">Home</a> |
-            <a href="report.html">Report a Bug</a> |
-            <a href="examples.html">Examples</a>
-        </p>
-        <p>&copy; 2026 BugFlow - Enmanuel Morillo, CSC271</p>
+      <p>
+        <a href="index.html">Home</a> | <a href="report.html">Report a Bug</a> |
+        <a href="examples.html">Examples</a>
+      </p>
+      <p>&copy; 2026 BugFlow - Enmanuel Morillo, CSC271</p>
     </footer>
-
-</body>
+  </body>
 </html>
