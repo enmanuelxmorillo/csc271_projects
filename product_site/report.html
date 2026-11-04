@@ -140,6 +140,25 @@
             placeholder="What did you do before the problem happened?"
             required
           ></textarea>
+          <!-- Bug Priority calculator  -->
+
+          <h2>Bug Priority Calculator</h2>
+          <!-- Severity slider -->
+          <label for="severity">Severity:</label>
+          <input type="range" id="severity" min="1" max="3" value="2" />
+
+          <p id="severityValue">2</p>
+
+          <label for="howFrequent"> Frequency</label>
+          <input type="range" id="howFrequent" min="1" max="5" value="2" />
+
+          <p id="howFrequentValue">2</p>
+
+          <button type="button" id="calculatePriority">
+            Calculate Priority
+          </button>
+          <p id="result"></p>
+          <script src="js/PriorityCalculator.js"></script>
 
           <!-- Screenshot upload -->
           <label for="screenshot">Screenshot:</label>
@@ -175,7 +194,6 @@
         <a href="index.html">Home</a> | <a href="report.html">Report a Bug</a> |
         <a href="examples.html">Examples</a>
       </p>
-      <p>&copy; 2026 BugFlow - Enmanuel Morillo, CSC271</p>
     </footer>
   </body>
 </html>

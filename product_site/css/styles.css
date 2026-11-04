@@ -2,6 +2,8 @@
   Name: Enmanuel Morillo
   Date: October 20, 2026
   File: css/styles.css
+
+  All the code has been organized and indented by AI in order to imporve readability.And be able to 
 */
 
 
@@ -443,4 +445,83 @@ tr:nth-child(even) {
 }
 #site-footer a:hover {
   color: #93C5FD;
+}
+
+/* ---------- Bug Priority Calculator ---------- */
+
+/* Main container for the Bug Priority Calculator */
+.bug-calculator {
+  max-width: 500px; /* Limits how wide the calculator can be */
+  margin: 40px auto; /* Centers the calculator on the page */
+  padding: 30px; /* Adds space inside the calculator */
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 10px; /* Rounds the corners */
+}
+
+/* Calculator heading */
+.bug-calculator h2 {
+  text-align: center; /* Centers the heading */
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Labels for severity and frequency */
+.bug-calculator label {
+  display: block; /* Puts each label on its own line */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styling for both sliders */
+#severity,
+#howFrequent {
+  width: 100%; /* Makes sliders fill the container */
+  cursor: pointer;
+  accent-color: #2563eb; /* Changes the slider color */
+}
+
+/* Numbers displayed below the sliders */
+#severityValue,
+#howFrequentValue {
+  text-align: right;
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Calculate Priority button */
+#calculatePriority {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Changes button color when the mouse is over it */
+#calculatePriority:hover {
+  background-color: #1d4ed8;
+}
+
+/* Area where the calculation result appears */
+#result {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #eff6ff;
+  color: #1e40af;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Hides the result box when there is no result */
+#result:empty {
+  display: none;
 }
