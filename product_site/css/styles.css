@@ -525,3 +525,101 @@ tr:nth-child(even) {
 #result:empty {
   display: none;
 }
+
+/* ---------- Form feedback (Assignment 11: Events) ---------- */
+/* Styles for the messages that js/FormValidation.js and
+   js/ReportPreview.js show while the user fills out the form. */
+
+/* Message under each field (pulled up closer to its field) */
+.field-message {
+  margin: -14px 0 20px;
+  font-size: 14px;
+  min-height: 0;
+}
+
+/* Hides the message area when there is nothing to show */
+.field-message:empty {
+  display: none;
+}
+
+/* Blue tip shown when a field gains focus */
+.field-message.hint {
+  color: #1E40AF;
+}
+
+/* Red error shown when a field loses focus with bad input */
+.field-message.error {
+  color: #DC2626;
+  font-weight: bold;
+}
+
+/* Green message when the input is valid */
+.field-message.valid {
+  color: #16A34A;
+}
+
+/* Red border on a field that has an error */
+#bug-form .input-error {
+  border-color: #DC2626;
+  background-color: #FEF2F2;
+}
+
+/* Box for the submit / preview status messages */
+.form-status {
+  margin: 16px 0;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status.success {
+  background-color: #DCFCE7;
+  color: #166534;
+  border-left: 4px solid #16A34A;
+}
+
+.form-status.error {
+  background-color: #FEF2F2;
+  color: #B91C1C;
+  border-left: 4px solid #DC2626;
+}
+
+/* "Preview My Report" button (outlined so the blue Submit button stands out) */
+.btn-secondary {
+  display: block;
+  margin-bottom: 16px;
+  padding: 12px 24px;
+  border: 2px solid #2563EB;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  color: #2563EB;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #EFF6FF;
+}
+
+/* Organized report preview built by js/ReportPreview.js */
+.report-preview {
+  margin-bottom: 24px;
+  padding: 20px;
+  border: 2px solid #16A34A;
+  border-radius: 10px;
+  background-color: #F0FDF4;
+}
+
+.report-preview h3:first-child {
+  margin-top: 0;
+}
+
+.report-preview ol {
+  margin-bottom: 8px;
+}

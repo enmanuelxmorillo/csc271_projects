@@ -1,11 +1,15 @@
 /*  Name: Enmanuel Morillo
+
   Date: November 14, 2026
+
   File: js/PriorityCalculator.js
   Description: Powers the Bug Priority Calculator on report.html. It shows the
   current value of the Severity and Frequency sliders, calculates a priority
   score, turns that score into a Low / Medium / High priority level, and
   displays the result on the page. The code is split into small functions so
   each piece can be reused, tested, and updated on its own.
+
+  Used AI to create this summary ^^^
 
   */
 
@@ -20,14 +24,8 @@ const MEDIUM_PRIORITY_MIN = 6;
 /*
   updateSliderDisplay(slider, displayId)
   Purpose: Shows a slider's current value in a text element on the page.
-  Parameters:
-    slider    - the range <input> element to read the value from
-    displayId - the id of the element where the value should be shown
-  Returns: nothing
-  Behavior: If the display element can't be found, it does nothing
-  instead of causing an error.
-  (Replaces the two copy-pasted slider listeners from the old version.)
 */
+
 function updateSliderDisplay(slider, displayId) {
   let display = document.getElementById(displayId);
 
@@ -38,7 +36,7 @@ function updateSliderDisplay(slider, displayId) {
 
 /*
   calculatePriorityScore(severity, frequency)
-  Purpose: Multiplies severity by frequency to get a priority score.
+  Purpose: Multiplies severity x frequency to get the priority score.
 */
 function calculatePriorityScore(severity, frequency) {
   // Slider values come in as text, so convert them to numbers first
@@ -57,11 +55,7 @@ function calculatePriorityScore(severity, frequency) {
 
 /*
   getPriorityLevel(score)
-  Purpose: Turns a priority score into a priority level.
-  Parameters:
-    score - the number returned by calculatePriorityScore()
-  Returns: "High", "Medium", or "Low" as text,
-  or "Unknown" if the score is not a valid number.
+  Purpose: Turns the score into Low, Medium, or High.
 */
 function getPriorityLevel(score) {
   if (typeof score !== "number" || isNaN(score)) {
@@ -80,11 +74,6 @@ function getPriorityLevel(score) {
 /*
   formatPriorityMessage(score, level)
   Purpose: Builds the sentence that gets shown to the user.
-  Parameters:
-    score - the priority score (a number, or null if it couldn't be calculated)
-    level - the priority level text from getPriorityLevel()
-  Returns: the message as text. If the score is null, it returns a
-  friendly message asking the user to check the sliders instead.
 */
 function formatPriorityMessage(score, level) {
   if (score === null) {
@@ -98,8 +87,6 @@ function formatPriorityMessage(score, level) {
   showPriorityResult()
   Purpose: Reads both sliders, calculates the priority, and shows the
   result in the #result element. Runs when "Calculate Priority" is clicked.
-  Parameters: none
-  Returns: nothing
 */
 function showPriorityResult() {
   let severitySlider = document.getElementById("severity");
@@ -112,15 +99,6 @@ function showPriorityResult() {
   resultArea.textContent = formatPriorityMessage(score, level);
 }
 
-/*
-  setUpPriorityCalculator()
-  Purpose: Connects the sliders and button to the functions above and
-  shows each slider's starting value when the page loads.
-  Parameters: none
-  Returns: nothing
-  Behavior: If the calculator isn't on the current page, it stops quietly
-  so this file won't cause errors on other pages.
-*/
 function setUpPriorityCalculator() {
   let severitySlider = document.getElementById("severity");
   let frequencySlider = document.getElementById("howFrequent");
@@ -147,27 +125,28 @@ function setUpPriorityCalculator() {
   updateSliderDisplay(frequencySlider, "howFrequentValue");
 }
 
+
+
 /*
   runPriorityTests()
   Purpose: Calls calculatePriorityScore() and getPriorityLevel() with a
-  variety of inputs and prints PASS or FAIL for each one in the browser
-  console (Inspect -> Console).
-  Parameters: none
-  Returns: nothing
+  variety of inputs and prints PASS or FAIL for each one 
 */
+
+
 function runPriorityTests() {
   // Each test: [severity, frequency, expected score, expected level]
   let tests = [
-    [1, 1, 1, "Low"], // lowest possible score
-    [1, 5, 5, "Low"], // highest Low score
+    [1, 1, 1, "Low"],
+    [1, 5, 5, "Low"], 
     [2, 3, 6, "Medium"], // lowest Medium score
     [2, 5, 10, "Medium"], // highest Medium score
-    [3, 4, 12, "High"], // High score
-    [3, 5, 15, "High"], // highest possible score
+    [3, 4, 12, "High"], 
+    [3, 5, 15, "High"], 
     ["2", "4", 8, "Medium"], // text values, like real slider values
-    [0, 3, null, "Unknown"], // severity too low
-    [2, 6, null, "Unknown"], // frequency too high
-    ["abc", 2, null, "Unknown"], // not a number
+    [0, 3, null, "Unknown"], 
+    [2, 6, null, "Unknown"], 
+    ["abc", 2, null, "Unknown"],
   ];
 
   let passedCount = 0;

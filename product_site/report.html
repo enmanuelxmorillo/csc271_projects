@@ -1,7 +1,9 @@
 <!doctype html>
 
 <!-- Enmanuel Morillo: I used Copilot to organize and indent all the code.
- this page will allow users to submit a bug report by filling out a form with the necessary information. The form includes fields for where the bug was found, a title, description, steps to reproduce, and an optional screenshot upload. The page also provides guidance on what information is needed for a good bug report.
+ Updated November 24, 2026 (Assignment 11: Events): added feedback messages under each
+ field, a "Preview My Report" button, and the FormValidation.js / ReportPreview.js scripts.
+ AI-assisted: Claude (Anthropic) helped add re organize the code 
 
 -->
 <html lang="en">
@@ -102,6 +104,7 @@
           action="submit_bug.php"
           method="post"
           enctype="multipart/form-data"
+          novalidate
         >
           <label for="where_found">Where did you find it?</label>
           <input
@@ -111,6 +114,12 @@
             placeholder="Example: My school's assignment portal"
             required
           />
+          <!-- Feedback message (filled in by js/FormValidation.js) -->
+          <p
+            id="where_found-message"
+            class="field-message"
+            aria-live="polite"
+          ></p>
 
           <label for="bug_title">Bug Title:</label>
           <input
@@ -120,6 +129,12 @@
             placeholder="Example: Page freezes when uploading a file"
             required
           />
+          <!-- Feedback message (filled in by js/FormValidation.js) -->
+          <p
+            id="bug_title-message"
+            class="field-message"
+            aria-live="polite"
+          ></p>
 
           <label for="bug_description">Bug Description:</label>
           <textarea
@@ -130,6 +145,12 @@
             placeholder="What were you trying to do, and what actually happened?"
             required
           ></textarea>
+          <!-- Feedback message (filled in by js/FormValidation.js) -->
+          <p
+            id="bug_description-message"
+            class="field-message"
+            aria-live="polite"
+          ></p>
 
           <label for="steps_to_reproduce">Steps to Reproduce:</label>
           <textarea
@@ -140,6 +161,12 @@
             placeholder="What did you do before the problem happened?"
             required
           ></textarea>
+          <!-- Feedback message (filled in by js/FormValidation.js) -->
+          <p
+            id="steps_to_reproduce-message"
+            class="field-message"
+            aria-live="polite"
+          ></p>
           <!-- Bug Priority calculator  -->
 
           <h2>Bug Priority Calculator</h2>
@@ -183,7 +210,17 @@
             </div>
           </div>
 
+          <!-- Report preview (filled in by js/ReportPreview.js) -->
+          <button type="button" id="previewReport" class="btn-secondary">
+            Preview My Report
+          </button>
+          <p id="preview-message" class="form-status" aria-live="polite"></p>
+          <div id="report-preview" class="report-preview" hidden></div>
+
           <input type="submit" value="Submit Bug Report" />
+
+          <!-- Submit result message (filled in by js/FormValidation.js) -->
+          <p id="form-status" class="form-status" aria-live="polite"></p>
         </form>
       </section>
     </main>
@@ -195,5 +232,9 @@
         <a href="examples.html">Examples</a>
       </p>
     </footer>
+
+    <!-- Event scripts: loaded at the end of the body !-->
+    <script src="js/FormValidation.js"></script>
+    <script src="js/ReportPreview.js"></script>
   </body>
 </html>
